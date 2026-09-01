@@ -1,0 +1,14 @@
+{
+  "name": "ds-bench-de",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --experimental-strip-types --test eval/weights.test.ts eval/tiers/t0/score.test.ts eval/tiers/t1/score.test.ts eval/tiers/t2/score.test.ts eval/tiers/t3/score.test.ts harness/prompts.test.ts",
+    "leakage": "node --experimental-strip-types scripts/leakage-check.ts",
+    "validate-tasks": "node --experimental-strip-types scripts/validate-tasks.ts",
+    "bench:smoke": "node --experimental-strip-types harness/cli.ts smoke"
+  }
+}

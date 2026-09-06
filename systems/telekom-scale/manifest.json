@@ -1,0 +1,17 @@
+{
+  "slug": "telekom-scale",
+  "displayName": "Telekom Scale",
+  "org": "Deutsche Telekom",
+  "ranked": true,
+  "included": true,
+  "verifiedOn": "2026-09-01",
+  "entry": "react",
+  "package": "@telekom/scale-components-react",
+  "version": "3.0.0-beta.161",
+  "peers": { "@telekom/scale-components": "3.0.0-beta.161" },
+  "docsUrl": "https://github.com/telekom/scale",
+  "repoUrl": "https://github.com/telekom/scale",
+  "tooling": { "kind": "none", "note": "NO_TOOLING" },
+  "warnings": ["Published as beta. API may shift. Pin must not be upgraded mid-benchmark."],
+  "c0Line": "Use design system telekom-scale (package @telekom/scale-components-react)."
+}

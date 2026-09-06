@@ -1,0 +1,16 @@
+{
+  "slug": "siemens-ix",
+  "displayName": "Siemens iX",
+  "org": "Siemens",
+  "ranked": true,
+  "included": true,
+  "verifiedOn": "2026-09-01",
+  "entry": "react",
+  "package": "@siemens/ix-react",
+  "version": "5.2.1",
+  "peers": { "@siemens/ix": "5.2.1", "@siemens/ix-icons": "3.5.0" },
+  "docsUrl": "https://ix.siemens.io",
+  "repoUrl": "https://github.com/siemens/ix",
+  "tooling": { "kind": "mcp", "package": "@siemens/ix-mcp-react", "version": "5.2.1-v.1.11.3" },
+  "c0Line": "Use design system siemens-ix (package @siemens/ix-react)."
+}

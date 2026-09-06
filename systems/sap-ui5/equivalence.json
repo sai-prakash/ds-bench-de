@@ -1,0 +1,20 @@
+{
+  "status": "draft-phase1",
+  "htmlToDs": {
+    "button": ["Button"],
+    "input": ["Input"],
+    "checkbox": ["CheckBox"],
+    "switch": ["Switch"],
+    "select": ["Select", "ComboBox"],
+    "dialog": ["Dialog"],
+    "table": ["Table", "AnalyticalTable"],
+    "tab": ["Tab", "TabContainer"],
+    "toast": ["Toast", "MessageStrip"],
+    "card": ["Card"],
+    "date": ["DatePicker"],
+    "file": ["FileUploader"],
+    "nav": ["SideNavigation", "ShellBar"],
+    "progress": ["Wizard", "ProgressIndicator"],
+    "skeleton": ["BusyIndicator", "Skeleton"]
+  }
+}

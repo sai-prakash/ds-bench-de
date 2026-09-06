@@ -1,0 +1,15 @@
+{
+  "slug": "porsche-ds",
+  "displayName": "Porsche Design System",
+  "org": "Porsche",
+  "ranked": true,
+  "included": true,
+  "verifiedOn": "2026-09-01",
+  "entry": "react",
+  "package": "@porsche-design-system/components-react",
+  "version": "4.6.0",
+  "docsUrl": "https://designsystem.porsche.com",
+  "repoUrl": "https://github.com/porsche-design-system/porsche-design-system",
+  "tooling": { "kind": "in-package-skills", "note": "Package ships knowledge-skill files. No standalone public MCP recorded at verification." },
+  "c0Line": "Use design system porsche-ds (package @porsche-design-system/components-react)."
+}

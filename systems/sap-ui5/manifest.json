@@ -1,0 +1,19 @@
+{
+  "slug": "sap-ui5",
+  "displayName": "SAP UI5 Web Components (React)",
+  "org": "SAP",
+  "ranked": true,
+  "included": true,
+  "verifiedOn": "2026-09-01",
+  "entry": "react",
+  "package": "@ui5/webcomponents-react",
+  "version": "2.26.0",
+  "peers": {
+    "@ui5/webcomponents": "2.26.0",
+    "@ui5/webcomponents-fiori": "2.26.0"
+  },
+  "docsUrl": "https://sap.github.io/ui5-webcomponents-react",
+  "repoUrl": "https://github.com/UI5/webcomponents-react",
+  "tooling": { "kind": "mcp", "package": "@ui5/webcomponents-mcp-server", "version": "0.1.2" },
+  "c0Line": "Use design system sap-ui5 (package @ui5/webcomponents-react)."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "draft-phase1",
+  "htmlToDs": {
+    "button": ["IxButton"],
+    "input": ["IxInput"],
+    "checkbox": ["IxCheckbox"],
+    "switch": ["IxToggle"],
+    "select": ["IxSelect", "IxDropdown"],
+    "dialog": ["IxModal", "IxModalContent"],
+    "table": ["IxPagination"],
+    "tab": ["IxTabs", "IxTabItem"],
+    "toast": ["toast", "IxToast"],
+    "card": ["IxCard", "IxCardContent"],
+    "date": ["IxDatePicker"],
+    "file": ["IxUpload"],
+    "nav": ["IxMenu", "IxApplication"],
+    "progress": ["IxWorkflowSteps"],
+    "skeleton": ["IxSpinner"]
+  }
+}

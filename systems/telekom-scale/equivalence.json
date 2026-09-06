@@ -1,0 +1,20 @@
+{
+  "status": "draft-phase1",
+  "htmlToDs": {
+    "button": ["ScaleButton"],
+    "input": ["ScaleTextField"],
+    "checkbox": ["ScaleCheckbox"],
+    "switch": ["ScaleSwitch"],
+    "select": ["ScaleDropdown"],
+    "dialog": ["ScaleModal"],
+    "table": ["ScaleTable"],
+    "tab": ["ScaleTabNav"],
+    "toast": ["ScaleNotification"],
+    "card": ["ScaleCard"],
+    "date": ["ScaleDatePicker"],
+    "file": [],
+    "nav": ["ScaleSidebarNav"],
+    "progress": ["ScaleProgressBar"],
+    "skeleton": ["ScaleLoadingSpinner"]
+  }
+}

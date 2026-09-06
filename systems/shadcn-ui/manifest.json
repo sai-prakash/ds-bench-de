@@ -1,0 +1,15 @@
+{
+  "slug": "shadcn-ui",
+  "displayName": "shadcn/ui",
+  "org": "baseline",
+  "ranked": false,
+  "included": true,
+  "baseline": "reference",
+  "verifiedOn": "2026-09-01",
+  "entry": "react",
+  "package": "shadcn",
+  "version": "4.19.1",
+  "docsUrl": "https://ui.shadcn.com",
+  "tooling": { "kind": "cli", "package": "shadcn", "version": "4.19.1" },
+  "c0Line": "Use design system shadcn-ui (package shadcn / shadcn/ui components)."
+}

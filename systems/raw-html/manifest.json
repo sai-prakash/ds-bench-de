@@ -1,0 +1,15 @@
+{
+  "slug": "raw-html",
+  "displayName": "Raw HTML + CSS",
+  "org": "baseline",
+  "ranked": false,
+  "included": true,
+  "baseline": "floor",
+  "verifiedOn": "2026-09-01",
+  "entry": "html",
+  "package": null,
+  "version": null,
+  "docsUrl": null,
+  "tooling": { "kind": "none", "note": "NO_TOOLING" },
+  "c0Line": "Use raw HTML and CSS only. Do not use a component library."
+}

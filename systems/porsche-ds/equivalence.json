@@ -1,0 +1,20 @@
+{
+  "status": "draft-phase1",
+  "htmlToDs": {
+    "button": ["PButton"],
+    "input": ["PInputText", "PTextFieldWrapper"],
+    "checkbox": ["PCheckbox"],
+    "switch": ["PSwitch"],
+    "select": ["PSelect"],
+    "dialog": ["PModal"],
+    "table": ["PTable"],
+    "tab": ["PTabs", "PTabsBar"],
+    "toast": ["PToast"],
+    "card": [],
+    "date": ["PDatePicker"],
+    "file": [],
+    "nav": ["PFlyout"],
+    "progress": ["PStepperHorizontal"],
+    "skeleton": ["PSpinner"]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "status": "draft-phase1",
+  "htmlToDs": {
+    "button": ["DBButton"],
+    "input": ["DBInput"],
+    "checkbox": ["DBCheckbox"],
+    "switch": ["DBSwitch"],
+    "select": ["DBSelect"],
+    "dialog": ["DBDialog"],
+    "table": ["DBTable"],
+    "tab": ["DBTabBar"],
+    "toast": ["DBInfotext"],
+    "card": ["DBCard"],
+    "date": ["DBDatepicker"],
+    "file": [],
+    "nav": ["DBNavigation"],
+    "progress": ["DBStepper"],
+    "skeleton": ["DBLoading"]
+  }
+}

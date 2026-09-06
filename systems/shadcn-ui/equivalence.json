@@ -1,0 +1,20 @@
+{
+  "status": "draft-phase1",
+  "htmlToDs": {
+    "button": ["Button"],
+    "input": ["Input"],
+    "checkbox": ["Checkbox"],
+    "switch": ["Switch"],
+    "select": ["Select"],
+    "dialog": ["Dialog"],
+    "table": ["Table"],
+    "tab": ["Tabs"],
+    "toast": ["Toast", "Sonner"],
+    "card": ["Card"],
+    "date": ["Calendar", "DatePicker"],
+    "file": [],
+    "nav": ["Sheet", "Sidebar"],
+    "progress": ["Progress"],
+    "skeleton": ["Skeleton"]
+  }
+}

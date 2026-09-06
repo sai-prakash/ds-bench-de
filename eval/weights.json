@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0-draft",
+  "composite": { "t0": 0.15, "t1": 0.25, "t2": 0.15, "t3": 0.25, "t4": 0.2 },
+  "equal": { "t0": 0.2, "t1": 0.2, "t2": 0.2, "t3": 0.2, "t4": 0.2 },
+  "notes": "Weights are method parameters. Changing them requires a changelog entry and owner approval."
+}

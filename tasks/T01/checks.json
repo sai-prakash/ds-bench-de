@@ -1,0 +1,14 @@
+{
+  "task": "T01",
+  "viewport": ["1280x800", "390x844"],
+  "assertions": [
+    {"id": "heading", "type": "text", "selector": "h1, h2, [role=heading]", "includes": "Sign in"},
+    {"id": "email-field", "type": "exists", "selector": "input[type=email], input[name=email], input[autocomplete=username], input[autocomplete=email]"},
+    {"id": "password-field", "type": "exists", "selector": "input[type=password], input[name=password]"},
+    {"id": "submit", "type": "exists", "selector": "button[type=submit], button, [role=button]"},
+    {"id": "empty-submit-errors", "type": "script", "script": "empty-submit-shows-two-errors"},
+    {"id": "blocked-user-alert", "type": "script", "script": "blocked-user-shows-alert"},
+    {"id": "success-welcome", "type": "script", "script": "valid-user-welcome"},
+    {"id": "keyboard-tab-loop", "type": "keyboard", "minInteractive": 4}
+  ]
+}

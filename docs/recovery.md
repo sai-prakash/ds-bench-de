@@ -20,3 +20,11 @@ Protocol: V3 preflight revision, 26 November 2026. All legacy scoring is quarant
 - Use an isolated build branch and draft PR. Keep main unchanged pending review.
 - Stop on missing historical files, unresolved registry metadata or missing Docker; do not substitute simulated success.
 - No benchmark run or publication authorized by this recovery branch.
+
+## Recovery disposition (after first CI run)
+
+[Run 45773249901](https://github.com/sai-prakash/ds-bench-de/actions/runs/45773249901) checked out the actual branch, passed the four characterization tests, and failed all six original npm commands because their targets were absent. Its missing-file inventory, original command definitions and actual npm metadata responses are preserved in `docs/evidence/`.
+
+The original local clone is not accessible from this session and the commit is absent from GitHub. Proceed by reconstructing missing assets in the owning stages, not by claiming recovery of the original files. If the historical clone becomes available, compare on a separate branch before adopting any content. No full legacy suite has passed.
+
+P0 baseline now uses `npm test` (characterization only) and `npm run preflight`. Legacy commands are archived in `docs/evidence/legacy-package.json` and can be re-executed explicitly with `--run-legacy`; missing targets are reported as outstanding reconstruction debt. P0's exit is defined by the recovery baseline and stored audit evidence, not by requiring all P2–P5 assets to already exist. `RECOVERY_BASELINE_PASS` is not a P1, benchmark, or release pass. Registry responses for all five main historical package pins succeeded; full dependency locks, package contents, browser rendering, docs and tooling compatibility remain unverified.

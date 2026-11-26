@@ -1,4 +1,6 @@
-# Leaderboard (generated)
+# Archived synthetic fixture output
+
+**Historical fixture diagnostics only. Not generated-agent measurements or a leaderboard. Do not compare systems using these values. Superseded scoring protocol.**
 
 | System | n | T0 | T1 mean | T2 mean | T3 mean |
 |---|---:|---|---:|---:|---|

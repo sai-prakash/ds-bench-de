@@ -1,0 +1,594 @@
+{
+  "source": {
+    "commit": "0f40bc60f8e027b8fa8683c7b3d4314a0e053461",
+    "run": 45777381941,
+    "job": 139764353887,
+    "artifact": 15097085313
+  },
+  "kind": "engineering_feasibility_not_benchmark",
+  "protocol": "P1",
+  "node": "v22.16.0",
+  "environment": {
+    "os": "linux",
+    "arch": "x64"
+  },
+  "systems": [
+    {
+      "slug": "raw-html",
+      "status": "BUILD_RENDER_PROBE_PASS",
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "install",
+            "--package-lock-only",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "npm",
+            "ls",
+            "--all",
+            "--json"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "node",
+            "node_modules/playwright/cli.js",
+            "install",
+            "--with-deps",
+            "chromium"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        }
+      ],
+      "checks": [
+        "role_and_pointer_activation",
+        "keyboard_activation",
+        "axe_executed"
+      ],
+      "metadata": [],
+      "sourceSha256": "2e5e5e86d6dc4e9721492d581108ed31eb2104358341722873ced9c0cdd87e4f",
+      "lockSha256": "95750370a93efec4c6077f7b422db4a8b72ae16f63827945b4dda21677ed9a88",
+      "browserVersion": "141.0.7390.37",
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "button-name",
+          "color-contrast",
+          "document-title",
+          "html-has-lang",
+          "html-lang-valid",
+          "meta-viewport",
+          "nested-interactive"
+        ]
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "failedRequests": []
+    },
+    {
+      "slug": "sap-ui5",
+      "status": "NOT_PASSED",
+      "commands": [
+        {
+          "command": [
+            "npm",
+            "install",
+            "--package-lock-only",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "npm",
+            "ls",
+            "--all",
+            "--json"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        },
+        {
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exit": 0,
+          "error": null,
+          "stderr": ""
+        }
+      ],
+      "checks": [
+        "role_and_pointer_activation",
+        "keyboard_activation",
+        "axe_executed"
+      ],
+      "metadata": [
+        {
+          "package": "@ui5/webcomponents-react",
+          "version": "2.26.0",
+          "license": "Apache-2.0",
+          "buttonExport": {
+            "types": "./dist/webComponents/Button/index.d.ts",
+            "default": "./dist/webComponents/Button/index.js"
+          },
+          "themeProviderExport": {
+            "types": "./dist/components/ThemeProvider/index.d.ts",
+            "default": "./dist/components/ThemeProvider/index.js"
+          },
+          "files": [
+            {
+              "path": "dist/components/MessageViewButton/index.d.ts",
+              "sha256": "6d217684aec2040064f50f427f70e49ab9e664cca3d6a80e2ecdafcb21de8df3",
+              "bytes": 1044
+            },
+            {
+              "path": "dist/components/ThemeProvider/index.d.ts",
+              "sha256": "d365db1926a35e6eed3b8ea4e470073550c3b72c3eb3dddb83e4a16a9480dff1",
+              "bytes": 952
+            },
+            {
+              "path": "dist/webComponents/Button/index.d.ts",
+              "sha256": "d875987a6a10946a75b41113b128c179dcfcc96516fa9841c9cf11823fe7ec53",
+              "bytes": 10323
+            },
+            {
+              "path": "dist/webComponents/RadioButton/index.d.ts",
+              "sha256": "67802559c4cbca37bbc26e02afc166423c1594543020b29bd4b1ec47df0edfb3",
+              "bytes": 5301
+            },
+            {
+              "path": "dist/webComponents/SegmentedButton/index.d.ts",
+              "sha256": "64388552c537bd722106779593460519c744caad9cda84bafe0798563eca254f",
+              "bytes": 4378
+            },
+            {
+              "path": "dist/webComponents/SplitButton/index.d.ts",
+              "sha256": "4b73f2c175ea1a0f294cbeab37f8b61f6ae83847001212308d68db7703f461b8",
+              "bytes": 6305
+            },
+            {
+              "path": "dist/webComponents/ToggleButton/index.d.ts",
+              "sha256": "a8e3a09bf9886739b09fd3033f024a4a5905c1e9874ec6374ad9c774fff1bbca",
+              "bytes": 10312
+            },
+            {
+              "path": "dist/webComponents/ToolbarButton/index.d.ts",
+              "sha256": "61006b70f55c153d66e8b1b7c490ad46dc9451a448a3d00d9fa345773d0886ec",
+              "bytes": 5996
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+              "bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "sha256": "dac727ba4413ce2736f4a810f8d6a560f96ae177ddedb5fa3ad4f267548af23b",
+              "bytes": 832
+            },
+            {
+              "path": "wrappers/components/MessageViewButton/index.d.ts",
+              "sha256": "6d217684aec2040064f50f427f70e49ab9e664cca3d6a80e2ecdafcb21de8df3",
+              "bytes": 1044
+            },
+            {
+              "path": "wrappers/components/ThemeProvider/index.d.ts",
+              "sha256": "d365db1926a35e6eed3b8ea4e470073550c3b72c3eb3dddb83e4a16a9480dff1",
+              "bytes": 952
+            },
+            {
+              "path": "wrappers/webComponents/Button/index.d.ts",
+              "sha256": "d875987a6a10946a75b41113b128c179dcfcc96516fa9841c9cf11823fe7ec53",
+              "bytes": 10323
+            },
+            {
+              "path": "wrappers/webComponents/RadioButton/index.d.ts",
+              "sha256": "67802559c4cbca37bbc26e02afc166423c1594543020b29bd4b1ec47df0edfb3",
+              "bytes": 5301
+            },
+            {
+              "path": "wrappers/webComponents/SegmentedButton/index.d.ts",
+              "sha256": "64388552c537bd722106779593460519c744caad9cda84bafe0798563eca254f",
+              "bytes": 4378
+            },
+            {
+              "path": "wrappers/webComponents/SplitButton/index.d.ts",
+              "sha256": "4b73f2c175ea1a0f294cbeab37f8b61f6ae83847001212308d68db7703f461b8",
+              "bytes": 6305
+            },
+            {
+              "path": "wrappers/webComponents/ToggleButton/index.d.ts",
+              "sha256": "a8e3a09bf9886739b09fd3033f024a4a5905c1e9874ec6374ad9c774fff1bbca",
+              "bytes": 10312
+            },
+            {
+              "path": "wrappers/webComponents/ToolbarButton/index.d.ts",
+              "sha256": "61006b70f55c153d66e8b1b7c490ad46dc9451a448a3d00d9fa345773d0886ec",
+              "bytes": 5996
+            }
+          ]
+        },
+        {
+          "package": "@ui5/webcomponents",
+          "version": "2.26.0",
+          "license": "Apache-2.0",
+          "buttonExport": null,
+          "themeProviderExport": null,
+          "files": [
+            {
+              "path": "dist/custom-elements.json",
+              "sha256": "d6e7e4296c5c1f5dd966f1d68fcbc55def11657b7a265eadfbbdf178a10807aa",
+              "bytes": 1348574
+            },
+            {
+              "path": "dist/vscode.html-custom-data.json",
+              "sha256": "361dbe8d71323b497706ad719e7bcbc0d4f4b9140e73dd6306027e65e64eacee",
+              "bytes": 455925
+            },
+            {
+              "path": "LICENSE.txt",
+              "sha256": "5e81aff3f4dacc1aa3429bdcfefda84145835d9327aa6ea6764987b27bde500e",
+              "bytes": 11392
+            },
+            {
+              "path": "README.md",
+              "sha256": "3ccedc98b495b2e71e3012187cf84832ec9220901ff6cdf8a6eaa743f6d7747b",
+              "bytes": 13389
+            }
+          ]
+        },
+        {
+          "package": "@ui5/webcomponents-base",
+          "version": "2.26.0",
+          "license": "Apache-2.0",
+          "buttonExport": null,
+          "themeProviderExport": null,
+          "files": [
+            {
+              "path": "dist/custom-elements.json",
+              "sha256": "2e78eac5d4bef0fdd621ca822e30e50f4e81c759ed3eedb6e063d3300bf7e6af",
+              "bytes": 73238
+            },
+            {
+              "path": "LICENSE.txt",
+              "sha256": "5e81aff3f4dacc1aa3429bdcfefda84145835d9327aa6ea6764987b27bde500e",
+              "bytes": 11392
+            },
+            {
+              "path": "README.md",
+              "sha256": "0748bd7c412e4c67cfaf6c58a33b2eed9b503228aaae5ccb26ea0da003019ebe",
+              "bytes": 3877
+            }
+          ]
+        },
+        {
+          "package": "@ui5/webcomponents-fiori",
+          "version": "2.26.0",
+          "license": "Apache-2.0",
+          "buttonExport": null,
+          "themeProviderExport": null,
+          "files": [
+            {
+              "path": "dist/custom-elements.json",
+              "sha256": "1653f25198e535f937f51540587403feb336f763760ca0e4a5853319b6bbf8e7",
+              "bytes": 558541
+            },
+            {
+              "path": "dist/vscode.html-custom-data.json",
+              "sha256": "5ba0f553a6eb63db26929bfbd7779a23e904db1b21d89d3dcd3990916f75dd2b",
+              "bytes": 145990
+            },
+            {
+              "path": "LICENSE.txt",
+              "sha256": "5e81aff3f4dacc1aa3429bdcfefda84145835d9327aa6ea6764987b27bde500e",
+              "bytes": 11392
+            },
+            {
+              "path": "README.md",
+              "sha256": "4808bf7310e210a4ca22163642f18820bf611626a6844abf52c6609628dc3e69",
+              "bytes": 9081
+            }
+          ]
+        },
+        {
+          "package": "@ui5/webcomponents-icons",
+          "version": "2.26.0",
+          "license": "Apache-2.0",
+          "buttonExport": null,
+          "themeProviderExport": null,
+          "files": [
+            {
+              "path": "LICENSE.txt",
+              "sha256": "5e81aff3f4dacc1aa3429bdcfefda84145835d9327aa6ea6764987b27bde500e",
+              "bytes": 11392
+            },
+            {
+              "path": "README.md",
+              "sha256": "ab43649fc676789735d404f41d7b9991b951c49c01f3ce240a89a584e55ad843",
+              "bytes": 4444
+            }
+          ]
+        }
+      ],
+      "sourceSha256": "a52f98d32ac23d936eaf6f9fbf6bf6610fb07f008d853e7a37244514380e03b7",
+      "lockSha256": "74cdd467edf9ed62cc2fa85b07b0f7b615cf9382f6ca0e823323621042b449e3",
+      "browserVersion": "141.0.7390.37",
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": [
+          "aria-allowed-attr",
+          "aria-conditional-attr",
+          "aria-deprecated-role",
+          "aria-hidden-body",
+          "aria-prohibited-attr",
+          "aria-required-attr",
+          "aria-roles",
+          "aria-valid-attr-value",
+          "aria-valid-attr",
+          "button-name",
+          "color-contrast",
+          "document-title",
+          "html-has-lang",
+          "html-lang-valid",
+          "meta-viewport",
+          "nested-interactive"
+        ]
+      },
+      "pageErrors": [],
+      "externalRequests": [
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.jsdelivr.net"
+      ],
+      "failedRequests": [
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-SemiboldDuplex.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-SemiboldDuplex-full.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-Regular.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-Regular-full.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-SemiboldDuplex.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-SemiboldDuplex-full.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-Regular.woff2",
+          "error": "net::ERR_FAILED"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@11.36.4/content/Base/baseLib/baseTheme/fonts/72-Regular-full.woff2",
+          "error": "net::ERR_FAILED"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net',\n+   'https://cdn.jsdelivr.net'\n+ ]\n- []\n"
+    }
+  ],
+  "registry": [
+    {
+      "name": "react",
+      "requestedVersion": "19.1.1",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "19.1.1",
+        "license": "MIT",
+        "dist.integrity": "sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ=="
+      }
+    },
+    {
+      "name": "react-dom",
+      "requestedVersion": "19.1.1",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "19.1.1",
+        "license": "MIT",
+        "dist.integrity": "sha512-Dlq/5LAZgF0Gaz6yiqZCf6VCcZs1ghAJyrsu84Q/GT0gV+mCxbfmKNoGRKBYMJ8IEdGPqu49YWXD02GCknEDkw=="
+      }
+    },
+    {
+      "name": "@types/react",
+      "requestedVersion": "19.1.16",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "19.1.16",
+        "license": "MIT",
+        "dist.integrity": "sha512-WBM/nDbEZmDUORKnh5i1bTnAz6vTohUf9b8esSMu+b24+srbaxa04UbJgWx78CVfNXA20sNu0odEIluZDFdCog=="
+      }
+    },
+    {
+      "name": "@types/react-dom",
+      "requestedVersion": "19.1.9",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "19.1.9",
+        "license": "MIT",
+        "dist.integrity": "sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ=="
+      }
+    },
+    {
+      "name": "typescript",
+      "requestedVersion": "5.9.3",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "5.9.3",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="
+      }
+    },
+    {
+      "name": "vite",
+      "requestedVersion": "7.2.2",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "7.2.2",
+        "license": "MIT",
+        "dist.integrity": "sha512-BxAKBWmIbrDgrokdGZH1IgkIk/5mMHDreLDmCJ0qpyJaAteP8NvMhkwr/ZCQNqNH97bw/dANTE9PDzqwJghfMQ=="
+      }
+    },
+    {
+      "name": "playwright",
+      "requestedVersion": "1.56.1",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "1.56.1",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-aFi5B0WovBHTEvpM3DzXTUaeN6eN0qWnTkKx4NQaH4Wvcmc153PdaY2UBdSYKaGYw+UyWXSVyxDUg5DoPEttjw=="
+      }
+    },
+    {
+      "name": "axe-core",
+      "requestedVersion": "4.10.3",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "4.10.3",
+        "license": "MPL-2.0",
+        "dist.integrity": "sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg=="
+      }
+    },
+    {
+      "name": "@ui5/webcomponents-react",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-c37zvigOHG7NnOrYLT+dJeZyezFEUiW232mLVcbhCD5XMnaVv5VzkP09zQqkZ3stEXTNqkfkWwkoaf7Ff0fMlA=="
+      }
+    },
+    {
+      "name": "@ui5/webcomponents",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-0nmyFYQmDawfQMQv77dFe7g2lOzHL57/EVZuvi/XObw4uZQ9ktZCgZl0hp8IHdfqgRCyE28SZ4J6sfWWX5D+cQ=="
+      }
+    },
+    {
+      "name": "@ui5/webcomponents-base",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-1hIKdd+kFRrBC/jrCcubyvXcNZB17cBKVch6XXV17nG9VMpoq/5xRpJWhSeASuVgpeBwMX68wP3TF2pRbgnjrA=="
+      }
+    },
+    {
+      "name": "@ui5/webcomponents-fiori",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-5SZxMqGZygbFBKTWsva2mr8D41dRBKmPKMUZuaudqxuTgbQL5RKpNiHisbJd6MHUIxVJdcH3H4Xg+V2kNOvIsQ=="
+      }
+    },
+    {
+      "name": "@ui5/webcomponents-icons",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "stderr": "",
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-31jRdz1pqjJBan1Rm2TSdo8/hiyX02phr/GolFTH08l3RVHuBwfc/hnrQ6Q1bBcQQbLxOE7B5aIXm40/boSrag=="
+      }
+    }
+  ],
+  "status": "NOT_PASSED"
+}

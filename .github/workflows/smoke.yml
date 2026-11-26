@@ -6,16 +6,54 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  validators:
+  recovery:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - run: npm test
-      - run: npm run validate-tasks
-      - run: npm run leakage
-      - run: npm run bench:smoke
+          node-version: "22.16.0"
+      - name: Characterize legacy scorers (not V3 validation)
+        run: node --experimental-strip-types --test scripts/recovery.test.ts
+      - name: Record recovery evidence (not a benchmark)
+        shell: bash
+        run: |
+          set +e
+          node scripts/preflight.mjs --run-legacy --registry > "$RUNNER_TEMP/preflight.json"
+          status=$?
+          cat "$RUNNER_TEMP/preflight.json"
+          exit "$status"
+
+  feasibility:
+    needs: recovery
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.16.0"
+      - name: Install and exercise real UI5 and raw HTML scaffolds
+        run: node scripts/p1-feasibility.mjs "$RUNNER_TEMP/p1"
+      - name: Retain engineering evidence and dependency locks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-feasibility
+          path: |
+            ${{ runner.temp }}/p1/evidence.json
+            ${{ runner.temp }}/p1/*.package.json
+            ${{ runner.temp }}/p1/*.package-lock.json
+            ${{ runner.temp }}/p1/*.png
+          if-no-files-found: error
+          retention-days: 30

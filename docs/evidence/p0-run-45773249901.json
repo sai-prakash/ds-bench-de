@@ -1,0 +1,277 @@
+{
+  "kind": "recovery_diagnostics_not_benchmark",
+  "source": {
+    "workflow_run": 45773249901,
+    "job_id": 139750676185,
+    "commit": "e95514f7c0fa5e9f5769215f779d4d1366897fba",
+    "url": "https://github.com/sai-prakash/ds-bench-de/actions/runs/45773249901",
+    "date": "2026-11-26"
+  },
+  "historicalCommitAvailable": false,
+  "missing": [
+    "eval/tiers/t0/score.test.ts",
+    "eval/tiers/t1/analyze.test.ts",
+    "eval/tiers/t1/score.test.ts",
+    "eval/tiers/t2/score.test.ts",
+    "eval/tiers/t3/score.test.ts",
+    "eval/weights.test.ts",
+    "harness/prompts.test.ts",
+    "scripts/determinism.ts",
+    "scripts/leakage-check.ts",
+    "scripts/report.ts",
+    "scripts/score-fixtures.ts",
+    "scripts/validate-tasks.ts",
+    "tasks/T01/mock.ts",
+    "tasks/T02/checks.json",
+    "tasks/T02/mock.ts",
+    "tasks/T02/rubric.md",
+    "tasks/T02/spec.md",
+    "tasks/T03/checks.json",
+    "tasks/T03/mock.ts",
+    "tasks/T03/rubric.md",
+    "tasks/T03/spec.md",
+    "tasks/T04/checks.json",
+    "tasks/T04/mock.ts",
+    "tasks/T04/rubric.md",
+    "tasks/T04/spec.md",
+    "tasks/T05/checks.json",
+    "tasks/T05/mock.ts",
+    "tasks/T05/rubric.md",
+    "tasks/T05/spec.md",
+    "tasks/T06/checks.json",
+    "tasks/T06/mock.ts",
+    "tasks/T06/rubric.md",
+    "tasks/T06/spec.md",
+    "tasks/T07/checks.json",
+    "tasks/T07/mock.ts",
+    "tasks/T07/rubric.md",
+    "tasks/T07/spec.md",
+    "tasks/T08/checks.json",
+    "tasks/T08/mock.ts",
+    "tasks/T08/rubric.md",
+    "tasks/T08/spec.md",
+    "tasks/T09/checks.json",
+    "tasks/T09/mock.ts",
+    "tasks/T09/rubric.md",
+    "tasks/T09/spec.md",
+    "tasks/T10/checks.json",
+    "tasks/T10/mock.ts",
+    "tasks/T10/rubric.md",
+    "tasks/T10/spec.md",
+    "tasks/T11/checks.json",
+    "tasks/T11/mock.ts",
+    "tasks/T11/rubric.md",
+    "tasks/T11/spec.md",
+    "tasks/T12/checks.json",
+    "tasks/T12/mock.ts",
+    "tasks/T12/rubric.md",
+    "tasks/T12/spec.md"
+  ],
+  "legacyCommands": [
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit": 1
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "validate-tasks"
+      ],
+      "exit": 1
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "leakage"
+      ],
+      "exit": 1
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "score-fixtures"
+      ],
+      "exit": 1
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "determinism"
+      ],
+      "exit": 1
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "report"
+      ],
+      "exit": 1
+    }
+  ],
+  "registry": [
+    {
+      "slug": "sap-ui5",
+      "name": "@ui5/webcomponents-react",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-c37zvigOHG7NnOrYLT+dJeZyezFEUiW232mLVcbhCD5XMnaVv5VzkP09zQqkZ3stEXTNqkfkWwkoaf7Ff0fMlA==",
+        "peerDependencies": {
+          "react": "^18 || ^19",
+          "react-dom": "^18 || ^19",
+          "@types/react": "*",
+          "@types/react-dom": "*",
+          "@ui5/webcomponents": "~2.26.0",
+          "@ui5/webcomponents-base": "~2.26.0",
+          "@ui5/webcomponents-fiori": "~2.26.0",
+          "@ui5/webcomponents-icons": "~2.26.0"
+        }
+      }
+    },
+    {
+      "slug": "sap-ui5",
+      "name": "@ui5/webcomponents",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-0nmyFYQmDawfQMQv77dFe7g2lOzHL57/EVZuvi/XObw4uZQ9ktZCgZl0hp8IHdfqgRCyE28SZ4J6sfWWX5D+cQ=="
+      }
+    },
+    {
+      "slug": "sap-ui5",
+      "name": "@ui5/webcomponents-fiori",
+      "requestedVersion": "2.26.0",
+      "exit": 0,
+      "response": {
+        "version": "2.26.0",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-5SZxMqGZygbFBKTWsva2mr8D41dRBKmPKMUZuaudqxuTgbQL5RKpNiHisbJd6MHUIxVJdcH3H4Xg+V2kNOvIsQ=="
+      }
+    },
+    {
+      "slug": "siemens-ix",
+      "name": "@siemens/ix-react",
+      "requestedVersion": "5.2.1",
+      "exit": 0,
+      "response": {
+        "version": "5.2.1",
+        "license": "MIT",
+        "dist.integrity": "sha512-89hHHW2ThOcPjcoLLF+2VwDSgrF8EiH0I9QJbTr6qUgOJZtQ85OhnBpR0ckD2x+ubMUS342iBBToQOWq/M/P1Q==",
+        "peerDependencies": {
+          "react": "^18 || ^19",
+          "react-dom": "^18 || ^19",
+          "@siemens/ix-icons": "^3.5.0"
+        }
+      }
+    },
+    {
+      "slug": "siemens-ix",
+      "name": "@siemens/ix",
+      "requestedVersion": "5.2.1",
+      "exit": 0,
+      "response": {
+        "version": "5.2.1",
+        "license": "MIT",
+        "dist.integrity": "sha512-tEpOi3dmYj84/o/q1dxMCaML1tVoB0lr2EfgTosFopKtEjI4smz0QBdJSjJbnmqAH0LURUBdDJAm6+O04oLd4Q==",
+        "peerDependencies": {
+          "@siemens/ix-icons": "^3.5.0"
+        }
+      }
+    },
+    {
+      "slug": "siemens-ix",
+      "name": "@siemens/ix-icons",
+      "requestedVersion": "3.5.0",
+      "exit": 0,
+      "response": {
+        "version": "3.5.0",
+        "license": "MIT",
+        "dist.integrity": "sha512-FP/7jnjoTfIvIah5OkJ7nLoXjyNy2rcUClGk29NLd4h/If/lz5liu7AMrCNKV9BTNCWQM8UI1wmoeF8xWz5d+A=="
+      }
+    },
+    {
+      "slug": "telekom-scale",
+      "name": "@telekom/scale-components-react",
+      "requestedVersion": "3.0.0-beta.161",
+      "exit": 0,
+      "response": {
+        "version": "3.0.0-beta.161",
+        "license": "MPL-2.0",
+        "dist.integrity": "sha512-kRFdkOC+id/tDTXto8Z+tTaLrvowsD6pwEf57QXBYCLdh0EcblnlSWF3+EpkhwNeZmfgBH9Mim4ACqJz/PjJDQ==",
+        "peerDependencies": {
+          "react": ">=16.13.1",
+          "react-dom": ">=16.13.1",
+          "@types/react-dom": "^18.3.1",
+          "@telekom/scale-components": ">=3.0.0-beta.159"
+        }
+      }
+    },
+    {
+      "slug": "telekom-scale",
+      "name": "@telekom/scale-components",
+      "requestedVersion": "3.0.0-beta.161",
+      "exit": 0,
+      "response": {
+        "version": "3.0.0-beta.161",
+        "license": "MPL-2.0",
+        "dist.integrity": "sha512-00nxsglb/BkKb0w6/iKphI8BG/BAfj0ApQ0C6jFFanlh0qXrBy35cCuyMtdiOkwcUVWinWzZnB86d116yqrdSA=="
+      }
+    },
+    {
+      "slug": "porsche-ds",
+      "name": "@porsche-design-system/components-react",
+      "requestedVersion": "4.6.0",
+      "exit": 0,
+      "response": {
+        "version": "4.6.0",
+        "license": "SEE LICENSE IN LICENSE",
+        "dist.integrity": "sha512-2PJkG5Fy3DCNv1GITycMQdFfMu1CtcdRAOkIMbpxqvkXNjw4s2Rf7mQ2a6quiQsrPOyDynHjo4js1pZvByveOA==",
+        "peerDependencies": {
+          "jsdom": ">=30.0.0",
+          "react": ">=19.0.0 <20.0.0",
+          "react-dom": ">=19.0.0 <20.0.0",
+          "tailwindcss": ">= 4.0.0 <5.0.0",
+          "ag-grid-react": ">= 36.0.0 <37.0.0",
+          "ag-grid-community": ">= 36.0.0 <37.0.0",
+          "ag-grid-enterprise": ">= 36.0.0 <37.0.0"
+        }
+      }
+    },
+    {
+      "slug": "db-ux",
+      "name": "@db-ux/react-core-components",
+      "requestedVersion": "5.2.1",
+      "exit": 0,
+      "response": {
+        "version": "5.2.1",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-elcDFzPBEopOkw7Fwt9r0kti6il+RS9g8FoarpHyAsq8tSh8qIbK9XkC8S5lfeQGPhMqJfB6nVRx+UBCvmWxoQ=="
+      }
+    },
+    {
+      "slug": "db-ux",
+      "name": "@db-ux/core-components",
+      "requestedVersion": "5.2.1",
+      "exit": 0,
+      "response": {
+        "version": "5.2.1",
+        "license": "Apache-2.0",
+        "dist.integrity": "sha512-9SKBrveq/lzw6A/NlsEI1IGKfwY259fXOjwxEXk79+NYM6TVi7PaliV3c6JYIGWeIohLexopTDMNC6S6EpoAoA=="
+      }
+    }
+  ],
+  "p0": "BLOCKED",
+  "p1": "NOT_PASSED"
+}

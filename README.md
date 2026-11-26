@@ -12,6 +12,6 @@ See [recovery plan](docs/recovery.md). In a disposable checkout with Node 22, ru
 node scripts/preflight.mjs > preflight.json
 ```
 
-A nonzero exit indicates unresolved recovery work. Use `--run-legacy` only after reviewing the legacy scripts; `--registry` adds public npm metadata probes. Neither invokes paid model APIs. Registry responses alone do not establish eligibility.
+A nonzero exit indicates a failed recovery baseline; a zero exit is not benchmark readiness. The original missing assets remain listed in the audit. Run `npm test` for legacy characterization only. Use `--run-legacy` only after reviewing the legacy scripts; `--registry` adds public npm metadata probes. Neither invokes paid model APIs. Registry responses alone do not establish eligibility.
 
 No production generation, release, or ranking until the required gates pass.

@@ -1,22 +1,17 @@
 # ds-bench-de
 
-Public, reproducible benchmark of **agent-readiness** for the public design systems of major German companies.
+A research benchmark of coding-agent readiness for public German design systems.
 
-The leaderboard ranks **design systems**, not models.
+**Status: recovery and feasibility only. No measured benchmark leaderboard is available.** Historical synthetic fixture outputs are not comparable research results. The previous partial implementation is preserved for migration.
 
-**Phase: 2 — two-system pipeline proof.** Specs approved. LLM generation / full T0 Vite / full Playwright T3 remain `NOT_MEASURED` without API keys and a complete npm toolchain.
+## Start here
 
-Fixture T1/T2 (+ partial Chrome T3 on raw-html T01): [reports/leaderboard.md](reports/leaderboard.md).
+See [recovery plan](docs/recovery.md). In a disposable checkout with Node 22, run:
 
-Clone and run:
-
-```bash
-npm test
-npm run validate-tasks
-npm run leakage
-npm run score-fixtures
-npm run determinism
-npm run report
+```sh
+node scripts/preflight.mjs > preflight.json
 ```
 
-See STATUS.md. Local commit: `73e441c`.
+A nonzero exit indicates unresolved recovery work. Use `--run-legacy` only after reviewing the legacy scripts; `--registry` adds public npm metadata probes. Neither invokes paid model APIs. Registry responses alone do not establish eligibility.
+
+No production generation, release, or ranking until the required gates pass.

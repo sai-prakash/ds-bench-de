@@ -31,3 +31,29 @@ jobs:
           status=$?
           cat "$RUNNER_TEMP/preflight.json"
           exit "$status"
+
+  feasibility:
+    needs: recovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.16.0"
+      - name: Install and exercise real UI5 and raw HTML scaffolds
+        run: node scripts/p1-feasibility.mjs "$RUNNER_TEMP/p1"
+      - name: Retain engineering evidence and dependency locks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-feasibility
+          path: |
+            ${{ runner.temp }}/p1/evidence.json
+            ${{ runner.temp }}/p1/*.package.json
+            ${{ runner.temp }}/p1/*.package-lock.json
+            ${{ runner.temp }}/p1/*.png
+          if-no-files-found: error
+          retention-days: 30

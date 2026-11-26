@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22.16.0"
+      - name: Characterize legacy scorers (not V3 validation)
+        run: node --experimental-strip-types --test scripts/recovery.test.ts
       - name: Record recovery evidence (not a benchmark)
         shell: bash
         run: |

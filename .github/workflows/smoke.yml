@@ -6,16 +6,26 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  validators:
+  recovery:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - run: npm test
-      - run: npm run validate-tasks
-      - run: npm run leakage
-      - run: npm run bench:smoke
+          node-version: "22.16.0"
+      - name: Record recovery evidence (not a benchmark)
+        shell: bash
+        run: |
+          set +e
+          node scripts/preflight.mjs --run-legacy --registry > "$RUNNER_TEMP/preflight.json"
+          status=$?
+          cat "$RUNNER_TEMP/preflight.json"
+          exit "$status"

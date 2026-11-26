@@ -8,6 +8,7 @@ import { createRequire } from 'node:module';
 import { mkdir, writeFile, readFile, readdir, stat } from 'node:fs/promises';
 import { join, resolve, relative, extname, sep } from 'node:path';
 import { tmpdir } from 'node:os';
+import { pathToFileURL } from 'node:url';
 
 const out = resolve(process.argv[2] || join(tmpdir(), 'ds-bench-p1-evidence'));
 const work = join(out, 'work');
@@ -60,6 +61,35 @@ async function serve(dist) {
   await new Promise((ok,fail)=>{server.once('error',fail);server.listen(0,'127.0.0.1',ok);});
   return {server,url:'http://127.0.0.1:'+server.address().port};
 }
+// P1 local assets: replay the exact font declarations of the pinned UI5 package.
+// The tagged FontFace.ts checks data-ui5-font-face; do not change the agent's task.
+async function prepareLocalFonts(dir,row) {
+  const base=join(dir,'node_modules','@ui5/webcomponents-base');
+  const theme=join(dir,'node_modules','@sap-theming/theming-base-content');
+  const pkg=JSON.parse(await readFile(join(theme,'package.json'),'utf8'));
+  assert.equal(pkg.version,'11.36.4','Unexpected font dependency version');
+  const source=join(base,'dist','generated','css','FontFace.css.js');
+  const original=(await import(pathToFileURL(source).href)).default;
+  assert.equal(typeof original,'string');
+  const prefix='https://cdn.jsdelivr.net/npm/@sap-theming/theming-base-content@'+pkg.version+'/content/Base/baseLib/baseTheme/fonts/';
+  const matches=[...original.matchAll(/https:\/\/cdn\.jsdelivr\.net\/npm\/@sap-theming\/theming-base-content@[^/'"\s)]+\/content\/Base\/baseLib\/baseTheme\/fonts\/([A-Za-z0-9_.-]+\.woff2)/g)];
+  assert.ok(matches.length>0,'No expected font definitions in shipped CSS');
+  const files=[...new Set(matches.map(m=>m[1]))].sort();
+  await mkdir(join(dir,'public','vendor-fonts'),{recursive:true});
+  const assets=[];
+  for(const name of files){
+    const bytes=await readFile(join(theme,'content','Base','baseLib','baseTheme','fonts',name));
+    await writeFile(join(dir,'public','vendor-fonts',name),bytes);
+    assets.push({name,bytes:bytes.length,sha256:sha(bytes)});
+  }
+  for(const m of matches) assert.ok(m[0].startsWith(prefix),'Unexpected CDN package version');
+  const css=original.replaceAll(prefix,'/vendor-fonts/');
+  assert.ok(!/https?:\/\//.test(css),'Unexpected network URLs in font CSS');
+  const htmlPath=join(dir,'index.html');
+  const html=await readFile(htmlPath,'utf8');
+  await writeFile(htmlPath,html.replace('</head>','<style data-ui5-font-face>'+css+'</style></head>'));
+  row.localFonts={package:pkg.name,version:pkg.version,license:pkg.license,source:'@ui5/webcomponents-base/dist/generated/css/FontFace.css.js',cssSha256:sha(original),rewrittenCssSha256:sha(css),assets};
+}
 let browserInstalled=false;
 async function buildAndCheck(slug, ds) {
   const row={slug,status:'NOT_PASSED',commands:[],checks:[],metadata:[]};
@@ -89,6 +119,7 @@ async function buildAndCheck(slug, ds) {
     run('npm',['ls','--all','--json']);
     if(ds) {
       row.metadata=await Promise.all(Object.keys(ui5).map(name=>metadata(dir,name)));
+      await prepareLocalFonts(dir,row);
       const wrapper=row.metadata.find(m=>m.package==='@ui5/webcomponents-react');
       assert.equal(wrapper.version,ui5[wrapper.package]);
       assert.ok(wrapper.buttonExport && wrapper.themeProviderExport,'Missing shipped component exports');
@@ -104,8 +135,9 @@ async function buildAndCheck(slug, ds) {
       browser=await chromium.launch({headless:true});
       row.browserVersion=browser.version();
       const page=await browser.newPage({viewport:{width:1280,height:800}});
-      const pageErrors=[], external=[], failed=[];
+      const pageErrors=[], external=[], failed=[], localFontRequests=[];
       page.on('pageerror',e=>pageErrors.push(e.message));
+      page.on('requestfinished',req=>{if(req.resourceType()==='font'&&req.url().startsWith(url+'/vendor-fonts/'))localFontRequests.push(new URL(req.url()).pathname);});
       page.on('requestfailed',r=>failed.push({url:r.url(),error:r.failure()?.errorText}));
       await page.route('**/*',route=>{const u=new URL(route.request().url());if(u.origin===url||u.protocol==='data:'||u.protocol==='blob:')return route.continue();external.push(u.origin);return route.abort();});
       await page.goto(url,{waitUntil:'networkidle',timeout:15000});
@@ -127,6 +159,10 @@ async function buildAndCheck(slug, ds) {
       row.axe=axe;
       row.checks.push('axe_executed');
       await page.screenshot({path:join(out,slug+'.png')});
+      await page.evaluate(async()=>{await document.fonts.ready;});
+      row.localFontRequests=[...new Set(localFontRequests)].sort();
+      row.loadedFontFamilies=await page.evaluate(()=>[...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family).sort());
+      if(ds){assert.ok(row.localFontRequests.length>0,'No bundled UI5 fonts loaded');assert.ok(row.loadedFontFamilies.some(f=>f.includes('72')),'No loaded SAP 72 font');row.checks.push('local_font_loading');}
       row.pageErrors=pageErrors;row.externalRequests=external;row.failedRequests=failed;
       assert.deepEqual(pageErrors,[]);assert.deepEqual(external,[]);assert.deepEqual(failed,[]);
       assert.ok(!axe.violations.some(v=>v.impact==='critical'||v.impact==='serious'),'Serious/critical axe violations');
